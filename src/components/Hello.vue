@@ -1,16 +1,23 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    
+    <button @click='logOut'>Log out</button>  
   </div>
 </template>
 
 <script>
+import firebase from 'firebase'
+
 export default {
   name: 'Hello',
   data () {
     return {
       msg: 'Welcome KWC Portal'
+    }
+  },
+  methods: {
+    logOut() {
+      firebase.auth().signOut();
     }
   }
 }

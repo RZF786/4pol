@@ -10,6 +10,7 @@
 
 <script>
   import firebase from 'firebase'
+  require('firebase/firestore')
 
   export default {
     name: 'signUp',
@@ -21,7 +22,6 @@
     },
     methods: {
       signUp: function() {
-        console.log("Signup activated")
         firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
           function(user) {
             alert('Your account has been created !')
